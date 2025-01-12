@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/auctionTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="Title text View"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/bidPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="TextView"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/bidTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="TextView"
+        android:paddingBottom="4dp" />
+</LinearLayout>
