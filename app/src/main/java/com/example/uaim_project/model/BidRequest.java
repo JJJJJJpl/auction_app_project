@@ -2,11 +2,13 @@ package com.example.uaim_project.model;
 
 public class BidRequest {
     private int auction_id;
+    private int user_id;
     private double bid_price;
 
-    public BidRequest(int auctionId, double bidPrice) {
+    public BidRequest(int auctionId, int user_id, double bidPrice) {
         this.auction_id = auctionId;
         this.bid_price = bidPrice;
+        this.user_id = user_id;
     }
 
     public int getAuction_id() {

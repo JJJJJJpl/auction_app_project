@@ -32,6 +32,7 @@ public class AuctionActivity extends AppCompatActivity {
     private ImageView auctionImageView;
     private ApiService apiService;
     private int auctionId;
+    private int userId;
     private String accessToken;
     private double currentPrice;
     private boolean isAuctionActive;
@@ -55,6 +56,7 @@ public class AuctionActivity extends AppCompatActivity {
         // Pobranie danych z Intentu
         auctionId = getIntent().getIntExtra("auction_id", -1);
         accessToken = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("AccessToken", "");
+        userId = Integer.parseInt(getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("User_id", "0"));
 
         apiService = ApiClient.getClient().create(ApiService.class);
 
@@ -98,8 +100,9 @@ public class AuctionActivity extends AppCompatActivity {
                         currentPrice = auction.getStartingPrice();
                     }
 
+                    Log.i("API_ERROR", "Access token: " + accessToken);
                     // Blokowanie licytacji, jeśli aukcja nie jest aktywna
-                    isAuctionActive = "aktywny".equals(auction.getStatus()) && !accessToken.isEmpty();
+                    isAuctionActive = "aktywna".equals(auction.getStatus()) && !accessToken.isEmpty();
                     bidButton.setEnabled(isAuctionActive);
                     bidAmountTextEdit.setEnabled(isAuctionActive);
 
@@ -130,7 +133,7 @@ public class AuctionActivity extends AppCompatActivity {
             return;
         }
 
-        BidRequest bidRequest = new BidRequest(auctionId, bidValue);
+        BidRequest bidRequest = new BidRequest(auctionId, userId, bidValue);
         apiService.placeBid("Bearer " + accessToken, bidRequest).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

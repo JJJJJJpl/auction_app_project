@@ -1,51 +1,50 @@
 package com.example.uaim_project.model;
 
 public class Bid {
-    private int bidId;
-    private int auctionId;
-    private String auctionTitle;
-    private double bidPrice;
-    private String bidTime;
+    private int bid_id;
+    private int auction_id;
+    private String auction_title;
+    private double bid_price;
+    private String bid_time;
 
-    // Gettery i Settery
-    public int getBidId() {
-        return bidId;
+    public int getBid_id() {
+        return bid_id;
     }
 
-    public void setBidId(int bidId) {
-        this.bidId = bidId;
+    public void setBid_id(int bid_id) {
+        this.bid_id = bid_id;
     }
 
-    public int getAuctionId() {
-        return auctionId;
+    public int getAuction_id() {
+        return auction_id;
     }
 
-    public void setAuctionId(int auctionId) {
-        this.auctionId = auctionId;
+    public void setAuction_id(int auction_id) {
+        this.auction_id = auction_id;
     }
 
-    public String getAuctionTitle() {
-        return auctionTitle;
+    public String getAuction_title() {
+        return auction_title;
     }
 
-    public void setAuctionTitle(String auctionTitle) {
-        this.auctionTitle = auctionTitle;
+    public void setAuction_title(String auction_title) {
+        this.auction_title = auction_title;
     }
 
-    public double getBidPrice() {
-        return bidPrice;
+    public double getBid_price() {
+        return bid_price;
     }
 
-    public void setBidPrice(double bidPrice) {
-        this.bidPrice = bidPrice;
+    public void setBid_price(double bid_price) {
+        this.bid_price = bid_price;
     }
 
-    public String getBidTime() {
-        return bidTime;
+    public String getBid_time() {
+        return bid_time;
     }
 
-    public void setBidTime(String bidTime) {
-        this.bidTime = bidTime;
+    public void setBid_time(String bid_time) {
+        this.bid_time = bid_time;
     }
 }
 

@@ -30,9 +30,9 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.BidViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull BidViewHolder holder, int position) {
         Bid bid = bidList.get(position);
-        holder.bidPriceTextView.setText(String.format("%.2f PLN", bid.getBidPrice()));
-        holder.auctionTitleTextView.setText(bid.getAuctionTitle());
-        holder.bidTimeTextView.setText(bid.getBidTime());
+        holder.bidPriceTextView.setText(String.format("%.2f PLN", bid.getBid_price()));
+        holder.auctionTitleTextView.setText(bid.getAuction_title());
+        holder.bidTimeTextView.setText(bid.getBid_time());
     }
 
     @Override

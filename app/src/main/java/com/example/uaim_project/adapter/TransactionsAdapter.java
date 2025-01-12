@@ -36,9 +36,9 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         Transaction transaction = transactionsList.get(position);
 
         // Ustawianie danych w widokach
-        holder.auctionTitleTextView.setText(transaction.getAuctionTitle());
-        holder.paymentStatusTextView.setText("Payment Status: " + transaction.getPaymentStatus());
-        holder.transactionTimeTextView.setText("Transaction Time: " + transaction.getTransactionTime());
+        holder.auctionTitleTextView.setText(transaction.getAuction_title());
+        holder.paymentStatusTextView.setText("Payment Status: " + transaction.getPayment_status());
+        holder.transactionTimeTextView.setText("Transaction Time: " + transaction.getTransaction_time());
     }
 
     @Override

@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
         logoutButton.setOnClickListener(v -> {
             accessToken = ""; // Usunięcie tokena
+            SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.remove("AccessToken");
+            editor.apply();
+
             updateButtonsVisibility(); // Odświeżenie widoku
             Toast.makeText(MainActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
         });
